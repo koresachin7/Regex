@@ -7,7 +7,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-
     /**
      * Purpose: Boolean method to validate first name. Condition for regex is, name
      * should start with capital letter and name should have minimum 3 letters.
@@ -21,7 +20,7 @@ public class UserRegistration {
         return matcher.matches();
     }
 
-    /*
+    /**
      * Purpose: Boolean method to validate mail ID of user.
      * @param mail: mail to validate.
      */
@@ -32,7 +31,7 @@ public class UserRegistration {
         return matcher.matches();
     }
 
-    /*
+    /**
      * Purpose: Boolean method to validate user's mobile number.
      * Condition 1: Mobile number should start with 91
      * Condition 2: Mobile number should have 10 numbers.
@@ -43,6 +42,20 @@ public class UserRegistration {
         String regex = "^(91)[0-9]{10}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(mobileNumber);
+        return matcher.matches();
+    }
+
+
+    /**
+     * Purpose: Boolean method to validate user's password.
+     * Rule 1: Password should have minimum 8 characters.
+     * @param password: Password to validate.
+     */
+    public boolean validatePassword(String password) {
+        // Space is not used, as console wont accept space.
+        String regex = "^[a-zA-z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
         return matcher.matches();
     }
 
@@ -90,6 +103,16 @@ public class UserRegistration {
             System.out.println("Mobile number is valid");
         else
             System.out.println("Mobile number is invalid");
+
+        // validating Password.
+        System.out.println("Set your password");
+        details.setPassword(sc.next());
+
+        boolean passwd = registration.validatePassword(details.getPassword());
+        if (passwd)
+            System.out.println("Password available");
+        else
+            System.out.println("Password should have minimum 8 characters");
         sc.close();
     }
 }
