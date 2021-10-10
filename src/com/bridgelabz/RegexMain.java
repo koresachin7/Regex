@@ -9,5 +9,6 @@ public class RegexMain {
         System.out.println("Welcome to User Registration ");
         UserRegistration userRegistration = new UserRegistration();
         userRegistration.validateUserDetails();
+        SampleEmails.email();
     }
 }
