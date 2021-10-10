@@ -6,6 +6,7 @@ public class UserDetails {
     String firstName;
     String lastName;
     String mail;
+    String mobileNumber;
 
     public String getFirstName() {
         return firstName;
@@ -26,5 +27,12 @@ public class UserDetails {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setMobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 }
