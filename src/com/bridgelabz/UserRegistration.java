@@ -20,7 +20,7 @@ public class UserRegistration {
         return matcher.matches();
     }
 
-    /**
+    /*
      * Purpose: Boolean method to validate mail ID of user.
      * @param mail: mail to validate.
      */
@@ -31,7 +31,7 @@ public class UserRegistration {
         return matcher.matches();
     }
 
-    /**
+    /*
      * Purpose: Boolean method to validate user's mobile number.
      * Condition 1: Mobile number should start with 91
      * Condition 2: Mobile number should have 10 numbers.
@@ -45,15 +45,14 @@ public class UserRegistration {
         return matcher.matches();
     }
 
-
-    /**
+    /*
      * Purpose: Boolean method to validate user's password.
      * Rule 1: Password should have minimum 8 characters.
+     * Rule 2: Password should have atleast one upper-case.
      * @param password: Password to validate.
      */
     public boolean validatePassword(String password) {
-        // Space is not used, as console wont accept space.
-        String regex = "^[a-zA-z0-9]{8,}$";
+        String regex =("^(?=.*[a-z])(?=.*[A-Z]).{8,}$");
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         return matcher.matches();
@@ -112,7 +111,7 @@ public class UserRegistration {
         if (passwd)
             System.out.println("Password available");
         else
-            System.out.println("Password should have minimum 8 characters");
+            System.out.println("Password Invalid");
         sc.close();
     }
 }
