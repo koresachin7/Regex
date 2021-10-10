@@ -4,7 +4,6 @@ package com.bridgelabz;
  * @author - Sachin Kore
  * @version - 16.0
  */
-
 public class RegexMain {
     public static void main(String[] args) {
         System.out.println("Welcome to User Registration ");
